@@ -41,7 +41,6 @@ const App = () => {
   const [isError, setError] = useState(false);
   const [text, setText] = useState([]);
 
-
   const generateAdvice = () => {
     const fetchData = async () => {
       try {
@@ -62,12 +61,11 @@ const App = () => {
     };
     setLoading(false);
     fetchData();
-  }
+  };
 
   useEffect(() => {
     generateAdvice();
   }, []);
-
 
   if (isLoading) {
     return <h1 className="computerMessage">Loading...</h1>;
@@ -91,11 +89,7 @@ const App = () => {
         <div className="myPatternMb">{patternDividerMb}</div>
       </div>
       <div className="buttonContain">
-        <button
-          className="diceButton"
-          type="button"
-          onClick={generateAdvice}
-        >
+        <button className="diceButton" type="button" onClick={generateAdvice}>
           {diceIcon}
         </button>
       </div>
